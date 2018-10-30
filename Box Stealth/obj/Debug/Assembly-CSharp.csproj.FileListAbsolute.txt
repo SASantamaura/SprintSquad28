@@ -1,0 +1,2 @@
+G:\SprintSquad28\Box Stealth\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
+G:\SprintSquad28\Box Stealth\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
