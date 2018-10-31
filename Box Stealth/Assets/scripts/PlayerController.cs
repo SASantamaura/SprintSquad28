@@ -6,7 +6,6 @@ public class PlayerController : MonoBehaviour {
 
     public float moveSpeed;
     public float turnSpeed;
-    public float bobSpeed;
 
     float bobbing;
     bool leaningLeft;
@@ -16,6 +15,7 @@ public class PlayerController : MonoBehaviour {
     Camera cam;
     Quaternion leftLean;
     Quaternion rightLean;
+    HeadBobber headBob;
 
     // Use this for initialization
     void Start () {
@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour {
         bobbing = 0;
         leaningRight = true;
         leaningLeft = false;
-
+        headBob = Camera.main.GetComponent<HeadBobber>();
     }
 	
 	// Update is called once per frame
@@ -45,13 +45,14 @@ public class PlayerController : MonoBehaviour {
 
             transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
             transform.Rotate(0, y, 0);
+            headBob.StartBobbing();
 
-            //cam.transform.position = new Vector3(Mathf.PingPong(Time.time, 0.6f) - 0.3f, Mathf.PingPong(Time.time, 0.3f) + 1.25f, transform.position.z);
-    }
+        }
         else
         {
             detectable = false;
             transform.position = new Vector3(transform.position.x, 1f, transform.position.z);
+            headBob.StopBobbing();
         }
 
 
