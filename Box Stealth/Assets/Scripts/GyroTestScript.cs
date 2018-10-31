@@ -8,6 +8,9 @@ public class GyroTestScript : MonoBehaviour {
     Gyroscope gyro;
     HeadBobber headBobScript;
     Animator anim;
+    public GameObject walkingModel;
+    public GameObject crouchingModel;
+
     // Use this for initialization
     void Start()
     {
@@ -26,6 +29,9 @@ public class GyroTestScript : MonoBehaviour {
         {
             print("my dude");
             headBobScript.StopBobbing();
+            anim.SetBool("Walking", false);
+            walkingModel.SetActive(false);
+            crouchingModel.SetActive(true);
         }
         else
         {
@@ -33,6 +39,8 @@ public class GyroTestScript : MonoBehaviour {
             transform.Rotate(0, Mathf.Ceil(gyro.gravity.x*100)/100, 0);
             headBobScript.StartBobbing();
             anim.SetBool("Walking", true);
+            crouchingModel.SetActive(false);
+            walkingModel.SetActive(true);
         }
         //print(gyro.rotationRate);
         //print(Mathf.Ceil(gyro.gravity.x * 100) / 100);
