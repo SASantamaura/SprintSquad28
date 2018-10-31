@@ -839,7 +839,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 534669902}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2073517964}
@@ -856,7 +856,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b291553d701176b4c8a9d52ecf121af4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  restPosition: {x: 0, y: 0.5, z: 0}
+  restPosition: {x: 0, y: 1, z: 0}
   transitionSpeed: 25
   bobSpeed: 3
   bobAmount: 0.2
@@ -2067,7 +2067,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2073517960}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.415, z: 0}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 534669905}
@@ -2122,7 +2122,7 @@ Animator:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2073517960}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
+  m_Avatar: {fileID: 9000000, guid: 32fe38bcc5a02dd4b9d2951970616e98, type: 3}
   m_Controller: {fileID: 9100000, guid: 0650566b07b222c4098b4d9fb2a36d04, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
@@ -2184,7 +2184,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2098826364}
   - component: {fileID: 2098826365}
-  - component: {fileID: 2098826366}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -2225,7 +2224,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 32fe38bcc5a02dd4b9d2951970616e98, type: 3}
   m_Controller: {fileID: 9100000, guid: 0650566b07b222c4098b4d9fb2a36d04, type: 2}
-  m_CullingMode: 1
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -2233,18 +2232,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!111 &2098826366
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2098826363}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 32fe38bcc5a02dd4b9d2951970616e98, type: 3}
-  m_Animations:
-  - {fileID: 7400000, guid: 32fe38bcc5a02dd4b9d2951970616e98, type: 3}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
