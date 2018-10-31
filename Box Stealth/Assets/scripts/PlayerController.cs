@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour {
         pickupScore = 0;
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Pickup")
         {
@@ -38,6 +38,9 @@ public class PlayerController : MonoBehaviour {
             Destroy(other.gameObject);
         }
     }
+
+    
+
 
 
 
