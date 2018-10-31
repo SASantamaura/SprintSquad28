@@ -1,0 +1,22 @@
+print "Starting maya loading and fbx conversion \n";
+	
+if (`file -q -exists "C:/Users/santamau/DOCUME~1/GitHub/SPRINT~1/BOXSTE~1/Assets/Modeling/Player/CHARAC~1.MB"`)
+{		
+	file -o "C:/Users/santamau/DOCUME~1/GitHub/SPRINT~1/BOXSTE~1/Assets/Modeling/Player/CHARAC~1.MB";
+	FBXExportEmbeddedTextures -v false;
+	// FBXExportHardEdges -v true;
+	FBXExportApplyConstantKeyReducer -v false;
+	FBXExportShowUI -v false;
+
+	print "Before fbx export\n";
+	FBXExport -f "C:/Users/santamau/DOCUME~1/GitHub/SPRINT~1/BOXSTE~1/Temp/ExportedFBXFile.fbx";
+	print "after fbx export\n";
+}
+else
+	print "Could not open Maya file.";
+
+sysFile -delete "C:/Users/santamau/DOCUME~1/GitHub/SPRINT~1/BOXSTE~1/Temp/CommandPipe";
+
+$donepipeKill = `fopen "C:/Users/santamau/DOCUME~1/GitHub/SPRINT~1/BOXSTE~1/Temp/SyncPipeKill" "w"`;
+fwrite $donepipeKill "Done";
+fclose $donepipeKill;
