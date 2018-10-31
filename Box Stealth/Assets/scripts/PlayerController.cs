@@ -6,14 +6,26 @@ public class PlayerController : MonoBehaviour {
 
     public float moveSpeed;
     public float turnSpeed;
+    public float bobSpeed;
+
+    float bobbing;
+    bool leaningLeft;
+    bool leaningRight;
     bool detectable;
     Rigidbody rb;
+    Camera cam;
+    Quaternion leftLean;
+    Quaternion rightLean;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         rb = GetComponent<Rigidbody>();
+        cam = Camera.main;
+        bobbing = 0;
+        leaningRight = true;
+        leaningLeft = false;
 
-	}
+    }
 	
 	// Update is called once per frame
 	void Update ()
@@ -33,10 +45,12 @@ public class PlayerController : MonoBehaviour {
 
             transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
             transform.Rotate(0, y, 0);
-        }
+
+            //cam.transform.position = new Vector3(Mathf.PingPong(Time.time, 0.6f) - 0.3f, Mathf.PingPong(Time.time, 0.3f) + 1.25f, transform.position.z);
+    }
         else
         {
-            detectable = false; 
+            detectable = false;
             transform.position = new Vector3(transform.position.x, 1f, transform.position.z);
         }
 
