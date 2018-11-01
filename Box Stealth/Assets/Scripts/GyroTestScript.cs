@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor.Animations;
+using UnityEngine.UI;
 
 public class GyroTestScript : MonoBehaviour {
 
@@ -11,6 +12,12 @@ public class GyroTestScript : MonoBehaviour {
     public bool isThePlayerMoving;
     public float movementSlowdown;
     public float rotateSpeedUp;
+
+    public GameObject CollectableUI;
+
+
+    private float pickupScore;
+    public float pickupMax;
     // Use this for initialization
     void Start()
     {
@@ -20,37 +27,63 @@ public class GyroTestScript : MonoBehaviour {
         anim = GetComponent<Animator>();
         anim.SetBool("Walking", false);
         isThePlayerMoving = false;
+        pickupScore = 0;
     }
 
     private void OnTriggerStay(Collider other)
     {
-        
+
         if (other.gameObject.name == "Spotlight")
         {
-            print("b");
             if (isThePlayerMoving == true)
             {
+                other.gameObject.GetComponent<SpotlightController>().alertMarkObject.SetActive(true);
                 other.gameObject.GetComponent<SpotlightController>().spotlightSuspicionValue++;
             }
             if (other.gameObject.GetComponent<SpotlightController>().spotlightSuspicionValue > 0)
-            {                
+            {
+                
                 other.gameObject.GetComponent<SpotlightController>().generatedLerpDestination = new Vector3(transform.position.x, other.transform.position.y, transform.position.z);
             }
+
             if (other.gameObject.GetComponent<SpotlightController>().spotlightSuspicionValue > 0 && isThePlayerMoving == false)
             {
                 other.gameObject.GetComponent<SpotlightController>().spotlightSuspicionValue--;
             }
+            
+        }        
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.name == "Spotlight")
+        {
+            StartCoroutine(other.gameObject.GetComponent<SpotlightController>().DepreciateSuspicion());
         }
     }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Pickup")
+        {
+            pickupScore++;
+            other.gameObject.GetComponent<PickupScript>().myCorrespondingUIElement.transform.GetChild(0).gameObject.SetActive(true);
+            Destroy(other.gameObject);
+        }
+    }
+
 
 
     // Update is called once per frame
     void FixedUpdate () {
        //transform.Rotate(gyro.rotationRateUnbiased.x, gyro.rotationRateUnbiased.y, gyro.rotationRateUnbiased.z);       
 
+        
+
+
         if ((Mathf.Round(gyro.gravity.y * 100)) / 100.0 == -1)
         {
-            print("my dude");
             headBobScript.StopBobbing();
             isThePlayerMoving = false;
         }
@@ -66,6 +99,6 @@ public class GyroTestScript : MonoBehaviour {
         //print(gyro.rotationRate);
         //print(Mathf.Ceil(gyro.gravity.x * 100) / 100);
         //print(Mathf.Ceil(gyro.rotationRateUnbiased.z));
-        print(gyro.gravity);
+       
     }
 }

@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour {
     Quaternion rightLean;
     HeadBobber headBob;
 
-    private float pickupScore;
+    
 
     // Use this for initialization
     void Start () {
@@ -27,17 +27,10 @@ public class PlayerController : MonoBehaviour {
         leaningRight = true;
         leaningLeft = false;
         headBob = Camera.main.GetComponent<HeadBobber>();
-        pickupScore = 0;
+        
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.tag == "Pickup")
-        {
-            pickupScore++;
-            Destroy(other.gameObject);
-        }
-    }
+    
 
     
 
