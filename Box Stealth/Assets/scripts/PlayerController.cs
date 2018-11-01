@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
 
@@ -30,8 +31,27 @@ public class PlayerController : MonoBehaviour {
         
     }
 
+<<<<<<< HEAD
     
+=======
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Pickup")
+        {
+            pickupScore++;
+            Destroy(other.gameObject);
+        }
 
+        if(other.gameObject.name == "Zone")
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+    }
+>>>>>>> 1d8dc6e406cf553443415433396ab747e055b3af
+
+ 
+         
+    
     
 
 

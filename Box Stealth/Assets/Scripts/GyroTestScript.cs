@@ -13,11 +13,14 @@ public class GyroTestScript : MonoBehaviour {
     public float movementSlowdown;
     public float rotateSpeedUp;
 
+<<<<<<< HEAD
     public GameObject CollectableUI;
 
 
     private float pickupScore;
     public float pickupMax;
+=======
+>>>>>>> 1d8dc6e406cf553443415433396ab747e055b3af
     // Use this for initialization
     void Start()
     {
@@ -35,6 +38,10 @@ public class GyroTestScript : MonoBehaviour {
 
         if (other.gameObject.name == "Spotlight")
         {
+<<<<<<< HEAD
+=======
+            //print("b");
+>>>>>>> 1d8dc6e406cf553443415433396ab747e055b3af
             if (isThePlayerMoving == true)
             {
                 other.gameObject.GetComponent<SpotlightController>().alertMarkObject.SetActive(true);
@@ -84,12 +91,15 @@ public class GyroTestScript : MonoBehaviour {
 
         if ((Mathf.Round(gyro.gravity.y * 100)) / 100.0 == -1)
         {
+<<<<<<< HEAD
+=======
+            //print("my dude");
+>>>>>>> 1d8dc6e406cf553443415433396ab747e055b3af
             headBobScript.StopBobbing();
             isThePlayerMoving = false;
         }
         else
         {
-            
             isThePlayerMoving = true;
             transform.Translate(0, 0,  -transform.InverseTransformDirection(transform.forward).z * gyro.gravity.z / movementSlowdown);
             transform.Rotate(0, Mathf.Ceil(gyro.gravity.x*100)/100 * rotateSpeedUp, 0);
@@ -99,6 +109,10 @@ public class GyroTestScript : MonoBehaviour {
         //print(gyro.rotationRate);
         //print(Mathf.Ceil(gyro.gravity.x * 100) / 100);
         //print(Mathf.Ceil(gyro.rotationRateUnbiased.z));
+<<<<<<< HEAD
        
+=======
+        //print(gyro.gravity);
+>>>>>>> 1d8dc6e406cf553443415433396ab747e055b3af
     }
 }
