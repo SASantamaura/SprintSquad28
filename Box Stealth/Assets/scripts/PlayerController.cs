@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
 
@@ -37,8 +38,16 @@ public class PlayerController : MonoBehaviour {
             pickupScore++;
             Destroy(other.gameObject);
         }
+
+        if(other.gameObject.name == "Zone")
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
 
+ 
+         
+    
     
 
 
