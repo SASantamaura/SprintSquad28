@@ -61,8 +61,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="Assets\crane1Script.cs" />
     <Compile Include="Assets\crane2Script.cs" />
+=======
+    <Compile Include="Assets\MainMenu.cs" />
+    <Compile Include="Assets\NewBehaviourScript.cs" />
+>>>>>>> 7ba03e50eade95682a75196a08a49b9d024a5528
     <Compile Include="Assets\Scripts\AndroidCameraTest.cs" />
     <Compile Include="Assets\Scripts\GyroScript.cs" />
     <Compile Include="Assets\Scripts\GyroTestScript.cs" />
@@ -72,6 +77,7 @@
     <Compile Include="Assets\Scripts\SpotlightController.cs" />
     <Compile Include="Assets\Scripts\SpotlightSound.cs" />
     <Reference Include="UnityEditor.StandardEvents">
+<<<<<<< HEAD
       <HintPath>C:/Users/santamau/Documents/GitHub/SprintSquad28/Box Stealth/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
@@ -82,6 +88,18 @@
     </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>C:/Users/santamau/Documents/GitHub/SprintSquad28/Box Stealth/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+=======
+      <HintPath>C:/Users/elliodea/Documents/GitHub/SprintSquad28/Box Stealth/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro.Editor">
+      <HintPath>C:/Users/elliodea/Documents/GitHub/SprintSquad28/Box Stealth/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.PackageManagerUI.Editor">
+      <HintPath>C:/Users/elliodea/Documents/GitHub/SprintSquad28/Box Stealth/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>C:/Users/elliodea/Documents/GitHub/SprintSquad28/Box Stealth/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+>>>>>>> 7ba03e50eade95682a75196a08a49b9d024a5528
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -279,10 +297,17 @@
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Analytics">
+<<<<<<< HEAD
       <HintPath>C:/Users/santamau/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.StandardEvents">
       <HintPath>C:/Users/santamau/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
+=======
+      <HintPath>C:/Users/elliodea/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.StandardEvents">
+      <HintPath>C:/Users/elliodea/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
+>>>>>>> 7ba03e50eade95682a75196a08a49b9d024a5528
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unity/mscorlib.dll</HintPath>
