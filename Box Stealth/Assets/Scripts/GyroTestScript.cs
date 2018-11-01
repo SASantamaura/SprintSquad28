@@ -11,6 +11,7 @@ public class GyroTestScript : MonoBehaviour {
     public bool isThePlayerMoving;
     public float movementSlowdown;
     public float rotateSpeedUp;
+
     // Use this for initialization
     void Start()
     {
@@ -27,7 +28,7 @@ public class GyroTestScript : MonoBehaviour {
         
         if (other.gameObject.name == "Spotlight")
         {
-            print("b");
+            //print("b");
             if (isThePlayerMoving == true)
             {
                 other.gameObject.GetComponent<SpotlightController>().spotlightSuspicionValue++;
@@ -50,13 +51,12 @@ public class GyroTestScript : MonoBehaviour {
 
         if ((Mathf.Round(gyro.gravity.y * 100)) / 100.0 == -1)
         {
-            print("my dude");
+            //print("my dude");
             headBobScript.StopBobbing();
             isThePlayerMoving = false;
         }
         else
         {
-            
             isThePlayerMoving = true;
             transform.Translate(0, 0,  -transform.InverseTransformDirection(transform.forward).z * gyro.gravity.z / movementSlowdown);
             transform.Rotate(0, Mathf.Ceil(gyro.gravity.x*100)/100 * rotateSpeedUp, 0);
@@ -66,6 +66,6 @@ public class GyroTestScript : MonoBehaviour {
         //print(gyro.rotationRate);
         //print(Mathf.Ceil(gyro.gravity.x * 100) / 100);
         //print(Mathf.Ceil(gyro.rotationRateUnbiased.z));
-        print(gyro.gravity);
+        //print(gyro.gravity);
     }
 }

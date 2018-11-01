@@ -1,4 +1,7 @@
 sceneSetups:
+<<<<<<< HEAD
+- path: Assets/Scenes/SampleScene1.unity
+=======
 - path: Assets/Scenes/End.unity
   isLoaded: 0
   isActive: 0
@@ -6,5 +9,6 @@ sceneSetups:
   isLoaded: 1
   isActive: 0
 - path: Assets/Scenes/Menu.unity
+>>>>>>> 7ba03e50eade95682a75196a08a49b9d024a5528
   isLoaded: 1
   isActive: 1
