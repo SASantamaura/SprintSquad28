@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour {
             Destroy(other.gameObject);
         }
 
-        if(other.gameObject.tag == "Zone")
+        if(other.gameObject.name == "Zone")
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
