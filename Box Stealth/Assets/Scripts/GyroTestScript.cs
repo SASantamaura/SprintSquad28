@@ -9,6 +9,7 @@ public class GyroTestScript : MonoBehaviour {
     Gyroscope gyro;
     HeadBobber headBobScript;
     Animator anim;
+    PlayerSteps sound;
     public bool isThePlayerMoving;
     public float movementSlowdown;
     public float rotateSpeedUp;
@@ -24,6 +25,7 @@ public class GyroTestScript : MonoBehaviour {
         gyro = Input.gyro;
         gyro.enabled = true;
         headBobScript = Camera.main.GetComponent<HeadBobber>();
+        sound = GetComponent<PlayerSteps>();
         anim = GetComponent<Animator>();
         anim.SetBool("Walking", false);
         isThePlayerMoving = false;
@@ -69,7 +71,9 @@ public class GyroTestScript : MonoBehaviour {
         {
             pickupScore++;
             other.gameObject.GetComponent<PickupScript>().myCorrespondingUIElement.transform.GetChild(0).gameObject.SetActive(true);
+            int pickupID = other.GetComponent<PickupScript>().id;
             Destroy(other.gameObject);
+            sound.PickupGet(pickupID);
         }
     }
 

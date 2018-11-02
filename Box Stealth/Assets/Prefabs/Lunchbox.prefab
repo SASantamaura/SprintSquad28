@@ -97,3 +97,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myCorrespondingUIElement: {fileID: 0}
   turnSpeed: 100
+  id: 4
