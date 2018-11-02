@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33199578890748418}
   - component: {fileID: 23682037102049480}
   - component: {fileID: 114195454746754264}
+  - component: {fileID: 65474861359075872}
   m_Layer: 0
   m_Name: Lunchbox
   m_TagString: Pickup
@@ -84,6 +85,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1540170461563604}
   m_Mesh: {fileID: 4300000, guid: 936e04a83daa42d49989edcf198652ba, type: 3}
+--- !u!65 &65474861359075872
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1540170461563604}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.11283647, y: 0.12570639, z: 0.03302484}
+  m_Center: {x: 0.000098314136, y: 0.010398222, z: -0.000000004656613}
 --- !u!114 &114195454746754264
 MonoBehaviour:
   m_ObjectHideFlags: 1

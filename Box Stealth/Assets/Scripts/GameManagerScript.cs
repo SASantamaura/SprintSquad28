@@ -16,7 +16,7 @@ public class GameManagerScript : MonoBehaviour {
 
     public GameObject[] pickupUIElements = new GameObject[6];
 
-    public Vector3[] pickupSpawnPoints = new Vector3[12];
+    public GameObject[] pickupSpawnPoints = new GameObject[12];
 
 
     void Awake () {
@@ -28,7 +28,7 @@ public class GameManagerScript : MonoBehaviour {
             {
                 mySpawnPoint = UnityEngine.Random.Range(0, 11);
             }
-            GameObject pickup = Instantiate(pickupPrefabs[i], pickupSpawnPoints[mySpawnPoint], Quaternion.identity) as GameObject;//instantiate the pickups
+            GameObject pickup = Instantiate(pickupPrefabs[i], pickupSpawnPoints[mySpawnPoint].transform.position, Quaternion.identity) as GameObject;//instantiate the pickups
             pickup.GetComponent<PickupScript>().ReceiveUIElement(pickupUIElements[i]);
             Array.Clear(pickupSpawnPoints, mySpawnPoint, 1);
         }
@@ -47,7 +47,20 @@ public class GameManagerScript : MonoBehaviour {
     void Update()
     {
         UpdateTimer();
+        if(timerTimeLeftInSeconds <= 0)
+        {
+            LoseGame();
+        }
+    }
+    public void WinGame()
+    {
+        timerTextBox.GetComponent<Text>().text = "YOU WIN!";
+
     }
 
+    public void LoseGame()
+    {
+        timerTextBox.GetComponent<Text>().text = "YOU GOT CAPTURED";
+    }
 
 }

@@ -19,6 +19,9 @@ public class GyroTestScript : MonoBehaviour {
 
     private float pickupScore;
     public float pickupMax;
+
+    public GameObject manager;
+    GameManagerScript manuscript;
     // Use this for initialization
     void Start()
     {
@@ -30,6 +33,8 @@ public class GyroTestScript : MonoBehaviour {
         anim.SetBool("Walking", false);
         isThePlayerMoving = false;
         pickupScore = 0;
+
+        manuscript = manager.GetComponent<GameManagerScript>();
     }
 
     private void OnTriggerStay(Collider other)
@@ -81,9 +86,13 @@ public class GyroTestScript : MonoBehaviour {
 
     // Update is called once per frame
     void FixedUpdate () {
-       //transform.Rotate(gyro.rotationRateUnbiased.x, gyro.rotationRateUnbiased.y, gyro.rotationRateUnbiased.z);       
+        //transform.Rotate(gyro.rotationRateUnbiased.x, gyro.rotationRateUnbiased.y, gyro.rotationRateUnbiased.z);       
 
-        
+
+        if (pickupScore >= pickupMax)
+        {
+            manuscript.WinGame();
+        }
 
 
         if ((Mathf.Round(gyro.gravity.y * 100)) / 100.0 == -1)
@@ -94,7 +103,6 @@ public class GyroTestScript : MonoBehaviour {
         }
         else
         {
-            
             isThePlayerMoving = true;
             transform.Translate(0, 0,  -transform.InverseTransformDirection(transform.forward).z * gyro.gravity.z / movementSlowdown);
             transform.Rotate(0, Mathf.Ceil(gyro.gravity.x*100)/100 * rotateSpeedUp, 0);

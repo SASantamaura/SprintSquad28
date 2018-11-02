@@ -16,10 +16,17 @@ public class SpotlightController : MonoBehaviour {
 
     public bool lockedOnToPlayer;
 
+    AudioSource source;
+    AudioClip alarm;
+
+    GameManagerScript manuscript;
+    public GameObject manager;
+
     private void Awake()
     {
         lockedOnToPlayer = false;
         detectionMeter.GetComponent<RectTransform>().offsetMax = new Vector3(detectionMeter.GetComponent<RectTransform>().offsetMax.x, detectionMeter.GetComponent<RectTransform>().offsetMax.y, 0);
+        manuscript = manager.GetComponent<GameManagerScript>();
     }
 
 
@@ -67,7 +74,11 @@ public class SpotlightController : MonoBehaviour {
 
         UnmaskDetectionMeter();
         CheckSpotlightSuspicion();
-        
+        if(spotlightSuspicionValue >= 105)
+        {
+            source.PlayOneShot(alarm);
+            manuscript.LoseGame();
+        }
 
         float fracJourney = lerpSpeed / Vector3.Distance(transform.position, generatedLerpDestination);
 
