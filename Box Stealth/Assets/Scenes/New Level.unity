@@ -23621,6 +23621,11 @@ Prefab:
       propertyPath: manager
       value: 
       objectReference: {fileID: 2080574403}
+    - target: {fileID: 114529730693653570, guid: d7ac9a30b2940014ab14fca11e53ae8c,
+        type: 2}
+      propertyPath: alarm
+      value: 
+      objectReference: {fileID: 8300000, guid: 55c2c2c8cf190ae4ab9508bc4c0326b8, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7ac9a30b2940014ab14fca11e53ae8c, type: 2}
   m_IsPrefabAsset: 0

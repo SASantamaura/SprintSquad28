@@ -17,7 +17,7 @@ public class SpotlightController : MonoBehaviour {
     public bool lockedOnToPlayer;
 
     AudioSource source;
-    AudioClip alarm;
+    public AudioClip alarm;
 
     GameManagerScript manuscript;
     public GameObject manager;
@@ -27,6 +27,7 @@ public class SpotlightController : MonoBehaviour {
         lockedOnToPlayer = false;
         detectionMeter.GetComponent<RectTransform>().offsetMax = new Vector3(detectionMeter.GetComponent<RectTransform>().offsetMax.x, detectionMeter.GetComponent<RectTransform>().offsetMax.y, 0);
         manuscript = manager.GetComponent<GameManagerScript>();
+        source = GetComponent<AudioSource>();
     }
 
 

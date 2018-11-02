@@ -17,7 +17,7 @@ public class GameManagerScript : MonoBehaviour {
     public GameObject[] pickupUIElements = new GameObject[6];
 
     public GameObject[] pickupSpawnPoints = new GameObject[12];
-
+    bool gameover;
 
     void Awake () {
 
@@ -33,7 +33,7 @@ public class GameManagerScript : MonoBehaviour {
             Array.Clear(pickupSpawnPoints, mySpawnPoint, 1);
         }
 
-
+        gameover = false;
     }
 
     private void UpdateTimer()
@@ -46,7 +46,11 @@ public class GameManagerScript : MonoBehaviour {
 
     void Update()
     {
-        UpdateTimer();
+        if(!gameover)
+        {
+            UpdateTimer();
+        }
+        
         if(timerTimeLeftInSeconds <= 0)
         {
             LoseGame();
@@ -54,13 +58,15 @@ public class GameManagerScript : MonoBehaviour {
     }
     public void WinGame()
     {
+        gameover = true;
         timerTextBox.GetComponent<Text>().text = "YOU WIN!";
-
     }
 
     public void LoseGame()
     {
+        gameover = true;
         timerTextBox.GetComponent<Text>().text = "BACK TO WORK";
+        Debug.Log("loser");
     }
 
 }
