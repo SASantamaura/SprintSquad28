@@ -9,7 +9,7 @@ public class GameManagerScript : MonoBehaviour {
     public float timer;
 
     public float timerTimeLeftInSeconds;
-
+    float timeleft;
     public GameObject timerTextBox;
 
     public GameObject[] pickupPrefabs = new GameObject[6];
@@ -39,8 +39,9 @@ public class GameManagerScript : MonoBehaviour {
     private void UpdateTimer()
     {
         timer += Time.deltaTime;
-        string minutes = Mathf.Floor((timerTimeLeftInSeconds - timer) / 60).ToString("00");
-        string seconds = Mathf.Floor(((timerTimeLeftInSeconds - timer) % 60)).ToString("00");
+        timeleft = timerTimeLeftInSeconds - timer;
+        string minutes = Mathf.Floor((timeleft) / 60).ToString("00");
+        string seconds = Mathf.Floor(((timeleft) % 60)).ToString("00");
         timerTextBox.GetComponent<Text>().text = minutes + ":" + seconds;
     }
 
@@ -51,7 +52,7 @@ public class GameManagerScript : MonoBehaviour {
             UpdateTimer();
         }
         
-        if(timerTimeLeftInSeconds <= 0)
+        if(timeleft <= 0)
         {
             LoseGame();
         }
