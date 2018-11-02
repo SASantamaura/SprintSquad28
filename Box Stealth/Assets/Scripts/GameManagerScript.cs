@@ -67,7 +67,6 @@ public class GameManagerScript : MonoBehaviour {
     {
         gameover = true;
         timerTextBox.GetComponent<Text>().text = "BACK TO WORK";
-        Debug.Log("loser");
     }
 
 }
