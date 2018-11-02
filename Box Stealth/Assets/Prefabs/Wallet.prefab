@@ -111,6 +111,10 @@ MonoBehaviour:
   myCorrespondingUIElement: {fileID: 0}
   turnSpeed: 100
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  id: 1
+>>>>>>> 832d02586bedc3b33817c37437b096766dcf1f4f
 =======
   id: 1
 >>>>>>> 832d02586bedc3b33817c37437b096766dcf1f4f
