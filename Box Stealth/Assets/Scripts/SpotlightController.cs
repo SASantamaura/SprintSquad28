@@ -40,6 +40,7 @@ public class SpotlightController : MonoBehaviour {
     void StartSpotlightLerp()
     {
         generatedLerpDestination = new Vector3(Random.Range(spotlightLerpMin.x, spotlightLerpMax.x), transform.position.y, Random.Range(spotlightLerpMin.z, spotlightLerpMax.z));
+        
     }
 
     public void UnmaskDetectionMeter()

@@ -17,7 +17,7 @@ public class GyroTestScript : MonoBehaviour {
     public GameObject CollectableUI;
 
 
-    private float pickupScore;
+    public float pickupScore;
     public float pickupMax;
 
     public GameObject manager;
@@ -80,6 +80,10 @@ public class GyroTestScript : MonoBehaviour {
             Destroy(other.gameObject);
             sound.PickupGet(pickupID);
         }
+        if(other.gameObject.name == "ExitTrigger" && pickupScore >= pickupMax)
+        {
+            manuscript.WinGame();
+        }
     }
 
 
@@ -88,12 +92,7 @@ public class GyroTestScript : MonoBehaviour {
     void FixedUpdate () {
         //transform.Rotate(gyro.rotationRateUnbiased.x, gyro.rotationRateUnbiased.y, gyro.rotationRateUnbiased.z);       
 
-
-        if (pickupScore >= pickupMax)
-        {
-            manuscript.WinGame();
-        }
-
+      
 
         if ((Mathf.Round(gyro.gravity.y * 100)) / 100.0 == -1)
         {

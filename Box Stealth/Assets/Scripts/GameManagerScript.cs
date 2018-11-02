@@ -19,6 +19,8 @@ public class GameManagerScript : MonoBehaviour {
     public GameObject[] pickupSpawnPoints = new GameObject[12];
     bool gameover;
 
+    public GameObject playerObject;
+
     void Awake () {
 
         for (int i = 0; i < pickupPrefabs.Length; i++)
@@ -43,6 +45,10 @@ public class GameManagerScript : MonoBehaviour {
         string minutes = Mathf.Floor((timeleft) / 60).ToString("00");
         string seconds = Mathf.Floor(((timeleft) % 60)).ToString("00");
         timerTextBox.GetComponent<Text>().text = minutes + ":" + seconds;
+        if (playerObject.GetComponent<GyroTestScript>().pickupScore >= playerObject.GetComponent<GyroTestScript>().pickupMax)
+        {
+            timerTextBox.GetComponent<Text>().text = minutes + ":" + seconds + Environment.NewLine + "Get to the Exit!";
+        }
     }
 
     void Update()
