@@ -60,7 +60,7 @@ public class GameManagerScript : MonoBehaviour {
 
     public void LoseGame()
     {
-        timerTextBox.GetComponent<Text>().text = "YOU GOT CAPTURED";
+        timerTextBox.GetComponent<Text>().text = "BACK TO WORK";
     }
 
 }

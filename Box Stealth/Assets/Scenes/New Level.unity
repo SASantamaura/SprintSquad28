@@ -4055,6 +4055,11 @@ Prefab:
       propertyPath: manager
       value: 
       objectReference: {fileID: 2080574403}
+    - target: {fileID: 114950419616190354, guid: ab1466bb0e551f3458da721fe7f9e269,
+        type: 2}
+      propertyPath: movementSlowdown
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab1466bb0e551f3458da721fe7f9e269, type: 2}
   m_IsPrefabAsset: 0
@@ -6491,7 +6496,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &420768356
 Light:
   m_ObjectHideFlags: 0
