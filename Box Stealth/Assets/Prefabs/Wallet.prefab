@@ -21,8 +21,8 @@ GameObject:
   - component: {fileID: 4153612844203488}
   - component: {fileID: 33069504762074118}
   - component: {fileID: 23990821247639288}
-  - component: {fileID: 65848061231833846}
   - component: {fileID: 114338189680192044}
+  - component: {fileID: 65789790242967710}
   m_Layer: 0
   m_Name: Wallet
   m_TagString: Pickup
@@ -36,9 +36,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1162702221167414}
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 1.5, y: 1.2, z: -18.61}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.4953, y: 0.84863, z: -18.658}
+  m_LocalScale: {x: 8, y: 8, z: 8}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -58,7 +58,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 15303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 10c207e6fdbe07a44bd62cdd2532ef56, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -84,19 +84,19 @@ MeshFilter:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1162702221167414}
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &65848061231833846
+  m_Mesh: {fileID: 4300000, guid: dc62b909ca100c242a1087905e84583e, type: 3}
+--- !u!65 &65789790242967710
 BoxCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1162702221167414}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.0000001, y: 2.0000005, z: 1.0000005}
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940699}
+  m_Size: {x: 0.1755513, y: 0.17323025, z: 0.030296516}
+  m_Center: {x: 0.00070879236, y: 0.05361957, z: 0.007428322}
 --- !u!114 &114338189680192044
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -109,3 +109,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myCorrespondingUIElement: {fileID: 0}
+  turnSpeed: 0

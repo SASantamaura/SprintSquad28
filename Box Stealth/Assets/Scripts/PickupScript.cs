@@ -5,6 +5,7 @@ using UnityEngine;
 public class PickupScript : MonoBehaviour {
 
     public GameObject myCorrespondingUIElement;
+    public float turnSpeed;
 
 	// Use this for initialization
 	void Awake () {
@@ -19,7 +20,9 @@ public class PickupScript : MonoBehaviour {
     }
 
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
+        transform.Rotate(Vector3.up, turnSpeed * Time.deltaTime);
 		
 	}
 }
