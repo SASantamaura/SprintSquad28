@@ -6,13 +6,8 @@ public class PickupScript : MonoBehaviour {
 
     public GameObject myCorrespondingUIElement;
     public float turnSpeed;
-
+    public int id;
 	// Use this for initialization
-	void Awake () {
-		
-
-
-	}
 	
     public void ReceiveUIElement(GameObject element)
     {

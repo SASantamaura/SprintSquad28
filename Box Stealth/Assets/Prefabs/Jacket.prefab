@@ -98,6 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myCorrespondingUIElement: {fileID: 0}
   turnSpeed: 100
+  id: 3
 --- !u!135 &135767951215983096
 SphereCollider:
   m_ObjectHideFlags: 1

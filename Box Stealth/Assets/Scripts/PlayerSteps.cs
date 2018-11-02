@@ -9,6 +9,13 @@ public class PlayerSteps : MonoBehaviour {
     public AudioClip step2;
     public AudioClip step3;
 
+    public AudioClip wallet;
+    public AudioClip phone;
+    public AudioClip jacket;
+    public AudioClip lunchbox;
+    public AudioClip keys;
+    public AudioClip keycard;
+
 	// Use this for initialization
 	void Start ()
     {
@@ -34,6 +41,31 @@ public class PlayerSteps : MonoBehaviour {
                 break;
             default:
                 feet.PlayOneShot(step3);
+                break;
+        }
+    }
+
+    public void PickupGet(int num)
+    {
+        switch(num)
+        {
+            case 1:
+                feet.PlayOneShot(wallet);
+                break;
+            case 2:
+                feet.PlayOneShot(phone);
+                break;
+            case 3:
+                feet.PlayOneShot(jacket);
+                break;
+            case 4:
+                feet.PlayOneShot(lunchbox);
+                break;
+            case 5:
+                feet.PlayOneShot(keys);
+                break;
+            case 6:
+                feet.PlayOneShot(keycard);
                 break;
         }
     }
